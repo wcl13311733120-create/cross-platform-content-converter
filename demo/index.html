@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨平台内容转换演示 — Cross-Platform Content Conversion & Distribution Platform</title>
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --card: #1a1a1a;
+    --accent: #e8a020;
+    --ink: #f0f0f0;
+    --muted: #888;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--ink); padding: 24px;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  header { text-align: center; padding: 28px 0 16px; }
+  h1 { font-size: 1.5rem; color: var(--accent); word-break: break-all; }
+  .sub {
+    color: var(--muted); font-size: 0.85rem; margin-top: 8px;
+    display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;
+  }
+  .sub b { color: var(--ink); }
+  .card {
+    background: var(--card); border-radius: 12px; padding: 24px;
+    margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,.3);
+  }
+  .video-cover {
+    position: relative; aspect-ratio: 16/9; border-radius: 8px;
+    overflow: hidden; background: #222; margin-bottom: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .video-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .video-cover .tag {
+    position: absolute; bottom: 12px; right: 12px;
+    background: rgba(0,0,0,.75); color: #fff; padding: 6px 12px;
+    border-radius: 20px; font-size: 0.75rem; text-align: center;
+  }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; font-size: 0.9rem; }
+  .meta span b { color: var(--accent); }
+  .desc { color: var(--muted); line-height: 1.6; margin-top: 12px; }
+  .btn {
+    display: inline-block; margin-top: 16px; padding: 10px 20px;
+    background: var(--accent); color: #000; border-radius: 8px;
+    text-decoration: none; font-weight: 600; text-align: center;
+  }
+  .btn:hover { filter: brightness(1.1); }
+  .platform-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px;
+  }
+  .platform-item {
+    background: #222; border-radius: 8px; padding: 14px; text-align: center;
+  }
+  .platform-item .name { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+  .platform-item .asp { color: var(--muted); font-size: 0.78rem; }
+  footer { text-align: center; color: var(--muted); font-size: 0.75rem; margin-top: 28px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>跨平台内容转换演示</h1>
+    <div class="sub">
+      <span>🎬 基于 2026-10-28 YouTube Trending Top 20</span>
+      <span>🧩 Python 3 标准库 · 零外部依赖</span>
+    </div>
+  </header>
+
+  <div class="card">
+    <div class="video-cover">
+      <img src="https://img.youtube.com/vi/UfNu7pcR0e8/hqdefault.jpg" alt="Avengers 封面">
+      <div class="tag">🎬 1 号热门 · 16.5M 观看</div>
+    </div>
+    <div class="meta">
+      <span>🎯 优先演示平台: <strong>YouTube Shorts</strong></span>
+      <span>📐 比例: <strong>9:16</strong></span>
+      <span>⏱️ 快照时长: <strong>60s</strong></span>
+    </div>
+    <p class="desc">
+      漫威首支《复仇者联盟：末日崛起》预告片，揭示新一代复仇者阵容与多元宇宙威胁。
+      观众对漫威重返巅峰的期待极高，评论区充斥“终于等到这天”。
+    </p>
+    <a class="btn" href="https://www.youtube.com/watch?v=UfNu7pcR0e8" target="_blank">▶ 观看原视频</a>
+  </div>
+
+  <div class="card">
+    <h3>📦 全部目标平台快照</h3>
+    <div class="platform-grid">
+      <div class="platform-item">
+        <div class="name">YouTube Shorts</div>
+        <div class="asp">9:16 · 60s</div>
+        <div class="desc" style="font-size:0.75rem;color:var(--muted);">#Shorts</div>
+      </div>
+      <div class="platform-item">
+        <div class="name">TikTok</div>
+        <div class="asp">9:16 · 15s</div>
+        <div class="desc" style="font-size:0.75rem;color:var(--muted);">#TikTok</div>
+      </div>
+      <div class="platform-item">
+        <div class="name">Instagram Reels</div>
+        <div class="asp">9:16 · 90s</div>
+        <div class="desc" style="font-size:0.75rem;color:var(--muted);">#Reels</div>
+      </div>
+      <div class="platform-item">
+        <div class="name">Twitter/X</div>
+        <div class="asp">16:9 · 30s</div>
+        <div class="desc" style="font-size:0.75rem;color:var(--muted);">#X</div>
+      </div>
+      <div class="platform-item">
+        <div class="name">Reddit</div>
+        <div class="asp">1:1 · 15s</div>
+        <div class="desc" style="font-size:0.75rem;color:var(--muted);">#Reddit</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>🚀 Cross-Platform Content Conversion & Distribution Platform MVP</p>
+    <p>Source: TrendReport 2026-10-28 | Python 3 stdlib · Zero dependencies</p>
+  </footer>
+</div>
+</body>
+</html>
